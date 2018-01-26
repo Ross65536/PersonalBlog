@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block static_files %} 
+        {% endblock %}
+        <title>
+            {% block title %} 
+            {{ fullname|truncatewords:1 }}'s Corner of the Web
+            {% endblock %}
+        </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'personalPages/css/base.css' %}" />
+    </head>
+    <body>
+        <header>
+            <h1>
+                <a href="{% url 'index' %}"> {{ fullname|truncatewords:1 }}'s Corner of the Web </a>
+            </h1>
+            <nav id="top-bar">
+                <ul>
+                    <li><a href="{% url 'resume' %}">CV</a></li>
+                </ul>
+            </nav>
+        </header>
+        {% block body %} 
+        {% endblock %}
+    </body>
+</html>
