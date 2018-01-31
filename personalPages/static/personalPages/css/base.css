@@ -22,14 +22,11 @@ body
     width: 50rem;
     margin: auto;
     margin-bottom: 0;
-    padding: 2rem;
     min-height: 100%;
 }
 
-#header h1
-{
-    margin-top: 0;
-}
+
+
 
 #top-bar ul {
     display: flex;
@@ -46,5 +43,33 @@ body
 }
 
 #top-bar ul li:first-child {
-    margin-left: 0;
+    padding-left: 0;
+}
+
+#header {
+    background-color: #373b41;
+    font-family: monospace;
+    padding: 1rem 3rem 1rem;
+}
+
+#page-content {
+    padding: 1rem 3rem 1rem;
+}
+
+
+#header ul li {
+    margin: auto;
+    font-size: 16pt;
+}
+
+#header ul {
+    margin: 0;
+}
+
+#header h1
+{
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 42pt;
+    text-align: center;
 }

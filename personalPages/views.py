@@ -12,6 +12,7 @@ def resume(request):
         'fullname': values.FULL_NAME,
         'resume_pdf_url': values.RESUME_PDF_URL,
         'resume_image_url': values.RESUME_IMAGE_URL,
+        'email': values.EMAIL,
     }
     return render(request, 'personalPages/resume.html', context)
 

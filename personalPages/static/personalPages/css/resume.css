@@ -1,0 +1,10 @@
+
+#resume_image {
+    display: block;
+    margin: 0.5rem auto 2rem;
+}
+
+#resume_pdf_link {
+    text-align: center;
+    margin-top: 3rem;
+}

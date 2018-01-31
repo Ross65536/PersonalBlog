@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        {% block static_files %} 
-        {% endblock %}
         <title>
             {% block title %} 
             {{ fullname }} Website
             {% endblock %}
         </title>
         <link rel="stylesheet" type="text/css" href="{% static 'personalPages/css/base.css' %}" />
+        {% block static_files %} 
+        {% endblock %}
     </head>
     <body>
         <header id="header">
@@ -25,7 +25,9 @@
                 </ul>
             </nav>
         </header>
-        {% block body %} 
-        {% endblock %}
+        <div id="page-content">
+            {% block body %} 
+            {% endblock %}
+        </div>
     </body>
 </html>

@@ -1,12 +1,21 @@
 {% extends "personalPages/base.html" %}
 
+{% load static %}
+
 {% block title %} 
 {{ fullname }}'s Resume
 {% endblock %}
 
+{% block static_files %} 
+<link rel="stylesheet" type="text/css" href="{% static 'personalPages/css/resume.css' %}" />
+{% endblock %}
+
 {% block body %} 
     <p>Description about me.</p> 
-    <a href="{{resume_pdf_url}}">Resume in PDF format</a> 
+    <p>You can contact me at: <a href="mailto:{{email}}">{{email}}</a></p>
+    <div id="resume_pdf_link">
+        <a  href="{{resume_pdf_url}}">Resume in PDF format</a> 
+    </div>
     <br>
-    <img src="{{resume_image_url}}"/>
+    <img id="resume_image" src="{{resume_image_url}}"/>
 {% endblock %}
