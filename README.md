@@ -1,3 +1,7 @@
-## Blog personal Website 
+## Personal Website 
 
-the style follow the Tomorrow Night color scheme
+the style follows the Tomorrow Night color scheme
+
+## Features
+
+The blod feture is currently not implemented.
