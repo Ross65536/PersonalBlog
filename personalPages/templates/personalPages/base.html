@@ -7,19 +7,21 @@
         {% endblock %}
         <title>
             {% block title %} 
-            {{ fullname|truncatewords:1 }}'s Corner of the Web
+            {{ fullname }} Website
             {% endblock %}
         </title>
         <link rel="stylesheet" type="text/css" href="{% static 'personalPages/css/base.css' %}" />
     </head>
     <body>
-        <header>
+        <header id="header">
             <h1>
-                <a href="{% url 'index' %}"> {{ fullname|truncatewords:1 }}'s Corner of the Web </a>
+                <!-- a href="{% url 'index' %}"> {{ fullname|truncatewords:1 }}'s Corner of the Web </a-->
+                <a href="{% url 'index' %}"> {{ fullname }} </a>
             </h1>
             <nav id="top-bar">
                 <ul>
-                    <li><a href="{% url 'resume' %}">CV</a></li>
+                    <li><a href="{% url 'resume' %}">Resume</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
                 </ul>
             </nav>
         </header>

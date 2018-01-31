@@ -2,13 +2,19 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from . import values
 
 def index(request):
     return resume(request)
 
 def resume(request):
     context = {
-        'fullname': 'Rostyslav'
+        'fullname': values.FULL_NAME
     }
     return render(request, 'personalPages/resume.html', context)
+
+def about(request):
+    context = {
+        'fullname': values.FULL_NAME
+    }
+    return render(request, 'personalPages/about.html', context)

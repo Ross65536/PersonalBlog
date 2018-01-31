@@ -7,3 +7,4 @@ staticfiles
 .env
 db.*
 *.db
+.vscode
