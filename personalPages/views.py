@@ -9,7 +9,9 @@ def index(request):
 
 def resume(request):
     context = {
-        'fullname': values.FULL_NAME
+        'fullname': values.FULL_NAME,
+        'resume_pdf_url': values.RESUME_PDF_URL,
+        'resume_image_url': values.RESUME_IMAGE_URL,
     }
     return render(request, 'personalPages/resume.html', context)
 
