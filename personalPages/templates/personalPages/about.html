@@ -6,6 +6,7 @@ About
 
 {% block body %} 
     <p>The source code for this website can be found on <a href="https://github.com/Ross65536/PersonalBlog">github</a>.</p> 
-    <p>The color scheme used is "Tomorrow Night".</p>
-
+    {% if email %}
+        <p>For any issues, suggestions, you can contact me at: <a href="mailto:{{email}}">{{email}}</a></p>
+    {% endif %}
 {% endblock %}

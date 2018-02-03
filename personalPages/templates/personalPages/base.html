@@ -37,9 +37,16 @@
         </div>
         <footer id="footer">
             <ul>
-                <span>Follow Me: </span>
-                <li><a href="#">Personal Link 1</a></li>
-                <li><a href="#">Personal Link 2</a></li>
+                <span>My Links: </span>
+                {% if github %}
+                    <li><a href="{{ github }}"><i class="fab fa-github"></i> GitHub</a></li>
+                {% endif %}
+                {% if linkedin %}
+                    <li><a href="{{ linkedin }}"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                {% endif %}
+                {% if email %}
+                    <li><a href="mailto:{{ email }}"><i class="fas fa-envelope"></i> E-mail</a></li>
+                {% endif %}
             </ul>
         </footer>
     </body>
