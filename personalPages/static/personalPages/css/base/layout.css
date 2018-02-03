@@ -1,0 +1,73 @@
+/*
+* =VARIOUS
+*
+*/
+
+li {
+    list-style-type: none;
+}
+
+/*
+* =HEADER
+*
+*/
+
+#top-bar ul {
+    display: flex;
+    padding-left: 0;
+}
+
+#top-bar li
+{
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#top-bar ul li:first-child {
+    /**padding-left: 0;*/
+}
+
+#header {
+    padding: 1rem 3rem 1rem;
+}
+
+#header ul li {
+    margin: auto;
+}
+
+
+#header ul {
+    margin: 0;
+}
+
+#header h1
+{
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* 
+* =CONTENT
+*
+*
+*/
+
+#page-content {
+    padding: 1rem 3rem 1rem;
+}
+
+html {
+    height: 90%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 50rem;
+    margin: auto;
+    margin-bottom: 0;
+    min-height: 100%;
+}

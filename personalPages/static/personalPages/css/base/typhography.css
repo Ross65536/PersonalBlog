@@ -1,0 +1,50 @@
+/*
+* =VARIOUS
+*
+*/
+
+a {
+    color: #de935f;
+    text-decoration: none;
+}
+
+/** Animation */
+a:active {
+    text-shadow: 0px 0px 15px #de935f;
+    transition: text-shadow 0.1s;
+}
+
+
+/*
+* =HEADER
+*
+*/
+
+#header {
+    background-color: #373b41;
+    font-family: monospace;
+}
+
+#header ul li {
+    font-size: 16pt;
+}
+
+#header h1
+{
+    font-size: 42pt;
+}
+
+/* 
+* =CONTENT
+*
+*
+*/
+
+html {
+    background-color: #1d1f21;
+}
+
+body {
+    background-color: #282a2e;
+    color: #c5c8c6;
+}
