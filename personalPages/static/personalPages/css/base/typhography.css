@@ -46,7 +46,17 @@ a:active {
 
 #profession {
     font-size: 14pt;
-    color: #c5c8c6;
+}
+
+/*
+* =FOOTER
+*
+*/
+
+#footer {
+    background-color:#373b41;
+    font-family: sans-serif;
+    font-size: 10pt;
 }
 
 /* 
