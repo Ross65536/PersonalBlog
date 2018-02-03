@@ -12,6 +12,7 @@
         <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'personalPages/css/base/typhography.css' %}" />
         <link rel="stylesheet" type="text/css" href="{% static 'personalPages/css/base/layout.css' %}" />
+        <link rel="stylesheet" href="{% static 'personalPages/css/base/responsive.css' %}" />
         {% block static_files %} 
         {% endblock %}
     </head>
@@ -37,7 +38,7 @@
         </div>
         <footer id="footer">
             <ul>
-                <span>My Links: </span>
+                <span class="footer-text">My Links: </span>
                 {% if github %}
                     <li><a href="{{ github }}"><i class="fab fa-github"></i> GitHub</a></li>
                 {% endif %}
