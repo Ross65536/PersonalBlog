@@ -1,3 +1,14 @@
+/**
+* Tomorrow Night Colors
+* Anchors: #de935f
+* Background: #1d1f21
+* Foregound: #c5c8c6
+* Header Background: #373b41
+* Page Background: #282a2e
+* 
+*/
+
+
 /*
 * =VARIOUS
 *
@@ -29,9 +40,13 @@ a:active {
     font-size: 16pt;
 }
 
-#header h1
-{
+#name {
     font-size: 42pt;
+}
+
+#profession {
+    font-size: 14pt;
+    color: #c5c8c6;
 }
 
 /* 

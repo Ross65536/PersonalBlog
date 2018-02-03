@@ -41,11 +41,16 @@ li {
     margin: 0;
 }
 
-#header h1
-{
+#name {
     margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0rem;
     text-align: center;
+}
+
+#profession {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
 }
 
 /* 

@@ -15,10 +15,13 @@
     </head>
     <body>
         <header id="header">
-            <h1>
+            <h1 id="name">
                 <!-- a href="{% url 'index' %}"> {{ fullname|truncatewords:1 }}'s Corner of the Web </a-->
                 <a href="{% url 'index' %}"> {{ fullname }} </a>
             </h1>
+            <h3 id="profession">
+                 {{ professional_title }} 
+            </h3>
             <nav id="top-bar">
                 <ul>
                     <li><a href="{% url 'resume' %}">Resume</a></li>

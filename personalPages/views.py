@@ -13,11 +13,13 @@ def resume(request):
         'resume_pdf_url': values.RESUME_PDF_URL,
         'resume_image_url': values.RESUME_IMAGE_URL,
         'email': values.EMAIL,
+        'professional_title': values.PROFESSIONAL_TITLE,
     }
     return render(request, 'personalPages/resume.html', context)
 
 def about(request):
     context = {
-        'fullname': values.FULL_NAME
+        'fullname': values.FULL_NAME,
+        'professional_title': values.PROFESSIONAL_TITLE,
     }
     return render(request, 'personalPages/about.html', context)
