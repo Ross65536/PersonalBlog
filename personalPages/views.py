@@ -17,6 +17,7 @@ def resume(request):
 
 def about(request):
     context = {
+        'admin_email': values.ADMINISTRATOR_EMAIL,
     }
     context.update(values.BASIC_INFO)
     return render(request, 'personalPages/about.html', context)
