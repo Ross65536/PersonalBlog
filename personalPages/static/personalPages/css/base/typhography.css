@@ -25,6 +25,10 @@ a:active {
     transition: text-shadow 0.1s;
 }
 
+a:hover {
+    text-decoration: underline;
+    transition: text-decoration 0.1s;
+}
 
 /*
 * =HEADER
