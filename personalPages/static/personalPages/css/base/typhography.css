@@ -20,14 +20,16 @@ a {
 }
 
 /** Animation */
+
+/*
 a:active {
     text-shadow: 0px 0px 15px #de935f;
     transition: text-shadow 0.1s;
 }
+*/
 
 a:hover {
     text-decoration: underline;
-    transition: text-decoration 0.1s;
 }
 
 /*
