@@ -1,0 +1,15 @@
+{% extends "personalPages/base.html" %}
+
+{% block title %} 
+Blog Title
+{% endblock %}
+
+{% block body %} 
+    <article>
+        <h1 id="blog_title">{{ article.title|safe }}</h1>
+        <div id="blog_content">
+            {{ article.content|safe }}
+        </div>
+        <span>{{ article.publish_date }} </span>
+    </article>
+{% endblock %}

@@ -24,6 +24,7 @@ def about(request):
     context.update(values.BASIC_INFO)
     return render(request, 'personalPages/about.html', context)
 
+
 class BlogIndexView(generic.ListView):
     template_name = 'personalPages/blog_index.html'
     context_object_name = 'article_list'
@@ -31,7 +32,16 @@ class BlogIndexView(generic.ListView):
     def get_queryset(self):
         return Article.objects.all().order_by('-publish_date')
 
-    def get_context_data(self,**kwargs):
-        context = super(BlogIndexView, self).get_context_data(**kwargs)
+    def get_context_data(self, **kwargs):
+        context = generic.ListView.get_context_data(self, **kwargs)
+        context.update(values.BASIC_INFO)
+        return context
+
+class BlogPostView(generic.DetailView):
+    model = Article
+    template_name = "personalPages/blog_post.html"
+
+    def get_context_data(self, **kwargs):
+        context = generic.DetailView.get_context_data(self, **kwargs)
         context.update(values.BASIC_INFO)
         return context

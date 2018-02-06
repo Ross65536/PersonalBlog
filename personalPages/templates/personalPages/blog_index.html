@@ -8,8 +8,9 @@
     {% if article_list %}
         {% for article in article_list %}
             <article>
-                <a href="#">{{ article.title }}</a>
-                <p>{{ article.content }}</p>
+                <a href="{% url 'blogpost' article.id %}">{{ article.title|safe }}</a>
+                <p>Published: {{ article.publish_date }}</p>
+                <p>{{ article.content|safe }}</p>
             </article>
         {% endfor %}
     {% else %}
