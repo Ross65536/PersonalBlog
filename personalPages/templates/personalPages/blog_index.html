@@ -1,0 +1,18 @@
+{% extends "personalPages/base.html" %}
+
+{% block title %} 
+{{ fullname }}'s Blog
+{% endblock %}
+
+{% block body %} 
+    {% if article_list %}
+        {% for article in article_list %}
+            <article>
+                <a href="#">{{ article.title }}</a>
+                <p>{{ article.content }}</p>
+            </article>
+        {% endfor %}
+    {% else %}
+        <p> Nothing to Show. </p>
+    {% endif %}
+{% endblock %}
