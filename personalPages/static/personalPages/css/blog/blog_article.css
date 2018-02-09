@@ -8,7 +8,6 @@
     padding-top: initial;  
 }
 
-
 .blog-title {
     font-size: 28pt;
 }
@@ -16,6 +15,11 @@
 .blog-content {
     margin-top: 2rem;
     white-space: pre-wrap;
+    text-align: justify;
+}
+
+.blog-content img {
+    width: 100%;
 }
 
 .post-time {
