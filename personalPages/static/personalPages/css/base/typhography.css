@@ -30,6 +30,10 @@ a:hover {
 *
 */
 
+#name a {
+    text-decoration: none;
+}
+
 #header {
     background-color: #373b41;
     font-family: monospace;
