@@ -1,6 +1,7 @@
 /**
 * Tomorrow Night Colors
 * Anchors: #de935f
+* Visited Anchors: #d4712b (darker orange)
 * Background: #1d1f21
 * Foregound: #c5c8c6
 * Header Background: #373b41
@@ -47,11 +48,15 @@ a:hover {
 }
 
 #name {
-    font-size: 42pt;
+    font-size: 48pt;
 }
 
 #profession {
-    font-size: 14pt;
+    font-size: 18pt;
+}
+
+#top-bar a {
+    font-size: 20pt;
 }
 
 /*
@@ -78,4 +83,9 @@ html {
 body {
     background-color: #282a2e;
     color: #c5c8c6;
+}
+
+/* visited anchor */
+#page-content a:visited {
+    color:#d4712b;
 }

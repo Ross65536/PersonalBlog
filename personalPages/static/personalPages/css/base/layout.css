@@ -24,10 +24,6 @@ li {
     padding-right: 1rem;
 }
 
-#top-bar ul li:first-child {
-    /**padding-left: 0;*/
-}
-
 #header {
     padding: 1rem 3rem 1rem;
 }
@@ -50,7 +46,7 @@ li {
 #profession {
     text-align: center;
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 /*
