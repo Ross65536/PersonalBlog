@@ -41,7 +41,7 @@ a:hover {
 
 #header {
     background-color: #373b41;
-    font-family: monospace;
+    font-family: Consolas, monospace;
 }
 
 #header ul li {
