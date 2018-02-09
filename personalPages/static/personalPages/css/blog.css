@@ -1,0 +1,30 @@
+/**
+    Tomorrow Night Colors
+    publication time color: #969896
+*/
+
+.blog-article {
+    margin-top: 4rem;
+}
+
+.blog-article:first-child {
+    margin-top: 1rem;
+}
+
+.blog-title {
+    font-size: 36pt;
+}
+
+.blog-content {
+    margin-top: 2rem;
+}
+
+.post-time {
+    margin-top: 1.5rem;
+    color: #969896;
+}
+
+.blog-title {
+    margin-bottom: 0;
+    margin-top: initial;
+}

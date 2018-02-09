@@ -1,16 +1,24 @@
 {% extends "personalPages/base.html" %}
 
+{% load static %}
+
 {% block title %} 
 {{ fullname }}'s Blog
+{% endblock %}
+
+{% block static_files %} 
+<link rel="stylesheet" href="{% static 'personalPages/css/blog.css' %}" />
 {% endblock %}
 
 {% block body %} 
     {% if article_list %}
         {% for article in article_list %}
-            <article>
-                <a href="{% url 'blogpost' article.id %}">{{ article.title|safe }}</a>
-                <p>Published: {{ article.publish_date }}</p>
-                <p>{{ article.content|safe }}</p>
+            <article class="blog-article">
+                <h1 class="blog-title"><a href="{% url 'blogpost' article.id %}">{{ article.title }}</a></h1>
+                <div class="blog-content">
+                    {{ article.content|safe }}
+                </div>
+                <p class="post-time">Published: {{ article.publish_date }}</p>
             </article>
         {% endfor %}
     {% else %}

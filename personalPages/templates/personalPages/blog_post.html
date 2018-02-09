@@ -1,15 +1,21 @@
 {% extends "personalPages/base.html" %}
 
+{% load static %}
+
 {% block title %} 
 Blog Title
 {% endblock %}
 
+{% block static_files %} 
+<link rel="stylesheet" href="{% static 'personalPages/css/blog.css' %}" />
+{% endblock %}
+
 {% block body %} 
-    <article>
-        <h1 id="blog_title">{{ article.title|safe }}</h1>
-        <div id="blog_content">
+    <article class="blog-article">
+        <h1 class="blog-title">{{ article.title }}</h1>
+        <div class="blog-content">
             {{ article.content|safe }}
         </div>
-        <span>{{ article.publish_date }} </span>
+        <p class="post-time">Published: {{ article.publish_date }}</p>
     </article>
 {% endblock %}
