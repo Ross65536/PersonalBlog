@@ -21,7 +21,6 @@ a {
 }
 
 /** Animation */
-
 a:hover {
     text-decoration: underline;
 }
@@ -30,6 +29,15 @@ a:hover {
 * =HEADER
 *
 */
+
+#name a {
+    text-decoration: none;
+}
+
+#name a:active {
+    text-shadow: 0px 0px 30px #de935f;
+    transition: text-shadow 0.1s;
+}
 
 #header {
     background-color: #373b41;
@@ -49,7 +57,7 @@ a:hover {
 }
 
 #top-bar a {
-    font-size: 20pt;
+    font-size: 22pt;
 }
 
 /*
