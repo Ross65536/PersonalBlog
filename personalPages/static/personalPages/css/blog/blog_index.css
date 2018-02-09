@@ -1,0 +1,21 @@
+/**
+    Tomorrow Night Colors
+    border color: ??
+*/
+
+
+.blog-article {
+    margin-top: 2rem;
+    padding-top: 1rem;  
+    padding-bottom: 1rem;
+    border-bottom: medium solid #373b41; 
+}
+
+.blog-article:last-child {
+    border-bottom: none; 
+}
+
+.blog-article:first-child {
+    margin-top: 1rem;
+    padding-top: initial;  
+}

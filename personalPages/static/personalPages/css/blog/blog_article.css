@@ -3,14 +3,6 @@
     publication time color: #969896
 */
 
-.blog-article {
-    margin-top: 4rem;
-}
-
-.blog-article:first-child {
-    margin-top: 1rem;
-}
-
 .blog-title {
     font-size: 28pt;
 }
