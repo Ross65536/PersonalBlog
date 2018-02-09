@@ -80,6 +80,7 @@ li {
 #page-content {
     padding: 1rem 3rem 1rem;
     min-height: 20rem;
+    margin-top: 1rem;
 }
 
 html {
