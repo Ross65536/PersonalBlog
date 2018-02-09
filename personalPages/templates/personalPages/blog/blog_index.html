@@ -9,6 +9,9 @@
 {% block static_files %} 
 <link rel="stylesheet" href="{% static 'personalPages/css/blog/blog_article.css' %}" />
 <link rel="stylesheet" href="{% static 'personalPages/css/blog/blog_index.css' %}" />
+
+<!-- highlisht.js -->
+{% include "personalPages/blog/code_highlighting.html" %}
 {% endblock %}
 
 {% block body %} 
@@ -16,9 +19,7 @@
         {% for article in article_list %}
             <article class="blog-article">
                 <h1 class="blog-title"><a href="{% url 'blogpost' article.id %}">{{ article.title }}</a></h1>
-                <div class="blog-content">
-                    {{ article.content|safe }}
-                </div>
+                <div class="blog-content">{{ article.content|safe }}</div>
                 <p class="post-time">Published: {{ article.publish_date }}</p>
             </article>
         {% endfor %}

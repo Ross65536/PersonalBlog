@@ -3,12 +3,19 @@
     publication time color: #969896
 */
 
+.blog-article:first-child {
+    margin-top: 1rem;
+    padding-top: initial;  
+}
+
+
 .blog-title {
     font-size: 28pt;
 }
 
 .blog-content {
     margin-top: 2rem;
+    white-space: pre-wrap;
 }
 
 .post-time {

@@ -14,8 +14,3 @@
 .blog-article:last-child {
     border-bottom: none; 
 }
-
-.blog-article:first-child {
-    margin-top: 1rem;
-    padding-top: initial;  
-}

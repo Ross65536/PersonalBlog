@@ -7,15 +7,15 @@ Blog Title
 {% endblock %}
 
 {% block static_files %} 
+<!-- highlisht.js -->
+{% include "personalPages/blog/code_highlighting.html" %}
 <link rel="stylesheet" href="{% static 'personalPages/css/blog/blog_article.css' %}" />
 {% endblock %}
 
 {% block body %} 
     <article class="blog-article">
         <h1 class="blog-title">{{ article.title }}</h1>
-        <div class="blog-content">
-            {{ article.content|safe }}
-        </div>
+        <div class="blog-content">{{ article.content|safe }}</div>
         <p class="post-time">Published: {{ article.publish_date }}</p>
     </article>
 {% endblock %}

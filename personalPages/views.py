@@ -26,7 +26,7 @@ def about(request):
 
 
 class BlogIndexView(generic.ListView):
-    template_name = 'personalPages/blog_index.html'
+    template_name = 'personalPages/blog/blog_index.html'
     context_object_name = 'article_list'
     
     def get_queryset(self):
@@ -39,7 +39,7 @@ class BlogIndexView(generic.ListView):
 
 class BlogPostView(generic.DetailView):
     model = Article
-    template_name = "personalPages/blog_post.html"
+    template_name = "personalPages/blog/blog_post.html"
 
     def get_context_data(self, **kwargs):
         context = generic.DetailView.get_context_data(self, **kwargs)
