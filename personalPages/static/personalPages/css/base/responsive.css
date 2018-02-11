@@ -50,5 +50,10 @@
 
     #page-content {
         min-height: initial;
+        margin-bottom: 0;
+    }
+
+    #header {
+        padding: 1rem 1rem 1rem;
     }
 }
