@@ -65,11 +65,13 @@ li {
 
 #footer ul {
     margin: 0;
+    padding-left: 0;
 }
 
 #footer ul li {
     margin-left: 3rem;
 }
+
 
 /* 
 * =CONTENT

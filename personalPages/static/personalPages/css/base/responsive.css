@@ -6,14 +6,49 @@
     #page-content {
         padding-left: 1rem;
         padding-right: 1rem;
-        min-height: 20rem;
+        min-height: initial;
     }
+
+    #header ul li {
+        font-size: 16pt;
+    }
+    
+    #name {
+        margin-top: 0;
+        font-size: 32pt;
+    }
+
+    #profession {
+        margin-bottom: 1.2rem;
+    }
+
+    #top-bar a {
+        font-size: 18pt;
+    }
+    
+    #page-content {
+        margin-top: 0;
+    }
+
+    #footer ul li {
+        margin-left: 2rem;
+    }
+
 }
 
-@media (max-width: 35rem) {
+
+@media (max-width: 30rem) {
     
     .footer-text {
         display: none;
     }
 
+
+    #footer ul li:first-of-type {
+        margin-left: 0;
+    }
+
+    #page-content {
+        min-height: initial;
+    }
 }
