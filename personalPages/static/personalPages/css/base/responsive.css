@@ -2,7 +2,11 @@
     body, html {
         width: 100%;
     }
+}
 
+
+@media (max-width: 35rem) {
+    
     #page-content {
         padding-left: 1rem;
         padding-right: 1rem;
@@ -34,11 +38,6 @@
         margin-left: 2rem;
     }
 
-}
-
-
-@media (max-width: 30rem) {
-    
     .footer-text {
         display: none;
     }
