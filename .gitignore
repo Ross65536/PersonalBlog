@@ -8,3 +8,4 @@ staticfiles
 db.*
 *.db
 .vscode
+*.env
