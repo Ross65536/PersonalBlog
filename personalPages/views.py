@@ -20,3 +20,9 @@ def about(request):
     }
     context.update(values.BASIC_INFO)
     return render(request, 'personalPages/about.html', context)
+
+def projects(request):
+    context = {
+    }
+    context.update(values.BASIC_INFO)
+    return render(request, 'personalPages/projects.html', context)
