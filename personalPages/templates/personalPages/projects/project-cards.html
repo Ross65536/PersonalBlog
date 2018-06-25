@@ -1,0 +1,28 @@
+<div class="card-columns">
+    {% for project in projects %}
+    <div class="card text-white bg-dark">
+        <div class="card-body">
+            <h2 class="card-title">{{ project.title | safe | truncatewords_html:10 }}</h2>
+            <p class="card-text">{{ project.description | safe | truncatewords_html:50 }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            {% if project.technologies.all.count > 0 %}
+            <li class="list-group-item text-white bg-dark">
+                {% for technology in project.technologies.all %} {{ technology.type_name }} {% endfor %}
+            </li>
+            {% endif %} {% if project.languages.all.count > 0 %}
+            <li class="list-group-item text-white bg-dark">
+                {% for language in project.languages.all %} {{ language.type_name }} {% endfor %}
+            </li>
+            {% endif %}
+        </ul>
+        {% if project.links.all.count > 0 %}
+        <div class="card-body">
+            {% for link in project.links.all %}
+            <a href="{{ link.link }}" class="card-link">{{ link.name }}</a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>

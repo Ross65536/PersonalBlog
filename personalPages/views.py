@@ -27,4 +27,4 @@ def projects(request):
         'projects': Project.objects.all()
     }
     context.update(values.BASIC_INFO)
-    return render(request, 'personalPages/projects.html', context)
+    return render(request, 'personalPages/projects/projects.html', context)
