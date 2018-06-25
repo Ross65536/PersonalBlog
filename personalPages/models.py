@@ -25,7 +25,7 @@ class Link(models.Model):
 
 class Project(models.Model):
     title = models.CharField(max_length=256)
-    description = models.TextField()
+    description = models.TextField(blank=True)
     technologies = models.ManyToManyField(Technology, blank=True)
     languages = models.ManyToManyField(Language, blank=True)
     links = models.ManyToManyField(Link, blank=True)
