@@ -6,6 +6,13 @@ class TypeName(models.Model):
     def __str__(self):
         return self.type_name
 
+class Technology(TypeName):
+    pass
+
+class Language(TypeName):
+    pass
+
+
 class Link(models.Model):
     name = models.CharField(max_length=256)
     link = models.URLField()
@@ -16,8 +23,9 @@ class Link(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=256)
     description = models.TextField()
-    technologies = models.ManyToManyField(TypeName)
-    links = models.ManyToManyField(Link)
+    technologies = models.ManyToManyField(Technology, blank=True)
+    languages = models.ManyToManyField(Language, blank=True)
+    links = models.ManyToManyField(Link, blank=True)
 
     def __str__(self):
         return self.title

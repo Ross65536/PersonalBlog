@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render
 from . import values
+from .models import Project
 
 def index(request):
     return resume(request)
@@ -23,6 +24,7 @@ def about(request):
 
 def projects(request):
     context = {
+        'projects': Project.objects.all()
     }
     context.update(values.BASIC_INFO)
     return render(request, 'personalPages/projects.html', context)
