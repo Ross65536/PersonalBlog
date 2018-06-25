@@ -19,7 +19,7 @@
         {% if project.links.all.count > 0 %}
         <div class="card-body">
             {% for link in project.links.all %}
-            <a href="{{ link.link }}" class="card-link">{{ link.name }}</a>
+            <a href="{{ link.link }}" class="card-link">{% include 'personalPages/components/anchor-icon.html' with ref=link.link %} {{ link.name }}</a>
             {% endfor %}
         </div>
         {% endif %}

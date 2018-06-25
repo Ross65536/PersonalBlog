@@ -20,6 +20,9 @@ class Link(models.Model):
     def __str__(self):
         return self.name
 
+    def get_fontawesome(self):
+        return "<i class=\"fas fa-envelope\"></i>"
+
 class Project(models.Model):
     title = models.CharField(max_length=256)
     description = models.TextField()
