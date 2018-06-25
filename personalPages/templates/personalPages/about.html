@@ -5,8 +5,5 @@ About
 {% endblock %}
 
 {% block body %} 
-    <p>The source code for this website can be found on <a href="https://github.com/Ross65536/PersonalBlog">github</a>.</p> 
-    {% if admin_email %}
-        <p>For any problems, issues or suggestions to do with the website please contact: <a href="mailto:{{admin_email}}">{{admin_email}}</a></p>
-    {% endif %}
+    {{person.about_page | safe}}
 {% endblock %}

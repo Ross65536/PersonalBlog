@@ -32,3 +32,21 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+# user & pages
+
+class PersonLink(Link):
+    pass
+
+class Email(Link):
+    pass
+
+class Person(models.Model):
+    fullname = models.CharField(max_length=256)
+    profession = models.CharField(max_length=256)
+    email = models.ForeignKey(Email, on_delete=models.SET_NULL, null=True)
+    footer_links = models.ManyToManyField(PersonLink, blank=True)
+
+    project_page = models.TextField(blank=True)
+    resume_page = models.TextField(blank=True)
+    about_page = models.TextField(blank=True)

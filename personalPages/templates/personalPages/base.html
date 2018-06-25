@@ -26,10 +26,10 @@
         <header id="header">
             <h1 id="name">
                 <!-- a href="{% url 'index' %}"> {{ fullname|truncatewords:1 }}'s Corner of the Web </a-->
-                <a href="{% url 'index' %}"> {{ fullname }} </a>
+                <a href="{% url 'index' %}"> {{ person.fullname }} </a>
             </h1>
             <h3 id="profession">
-                 {{ professional_title }} 
+                 {{ person.profession }} 
             </h3>
             <nav id="top-bar">
                 <ul>
@@ -45,15 +45,11 @@
         </div>
         <footer id="footer">
             <ul>
-                <span class="footer-text">My Links: </span>
-                {% if github %}
-                    <li><a href="{{ github }}">{% include 'personalPages/components/anchor-icon.html' with ref=github %}</i> GitHub</a></li>
-                {% endif %}
-                {% if linkedin %}
-                    <li><a href="{{ linkedin }}">{% include 'personalPages/components/anchor-icon.html' with ref=linkedin %} LinkedIn</a></li>
-                {% endif %}
-                {% if email %}
-                    <li><a href="mailto:{{ email }}">{% include 'personalPages/components/anchor-icon.html' with ref=email %} E-mail</a></li>
+                {% for link in person.footer_links.all %}
+                    <li><a href="{{ link.link }}">{% include 'personalPages/components/anchor-icon.html' with ref=link.link %}</i> {{ link.name }}</a></li>
+                {% endfor %}
+                {% if person.email %}
+                    <li><a href="mailto:{{ person.email.link }}">{% include 'personalPages/components/anchor-icon.html' with ref=person.email.link %} {{ person.email.name }}</a></li>
                 {% endif %}
             </ul>
         </footer>

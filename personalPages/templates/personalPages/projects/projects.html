@@ -11,8 +11,7 @@
 {% endblock %}
 
 {% block body %} 
-    <p>
-    Here are listed several projects that I have done in my spare time and as part of a school course.    
-    </p>
+    {{ person.project_page | safe }}
+
     {% include 'personalPages/projects/components/project-cards.html' with projects=projects %}
 {% endblock %}

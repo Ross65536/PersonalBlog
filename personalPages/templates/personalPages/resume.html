@@ -11,10 +11,8 @@
 {% endblock %}
 
 {% block body %} 
-    <p>Description about joe.</p> 
-    {% if email %}
-        <p>You can contact me at: <a href="mailto:{{email}}">{{email}}</a></p>
-    {% endif %}
+    {{ person.resume_page | safe }}
+    
     <div id="resume_pdf_link">
         <a  href="{{resume_pdf_url}}"><i class="fas fa-file-pdf fa-lg"></i> Download Resume (PDF)</a> 
     </div>

@@ -5,26 +5,27 @@ from django.shortcuts import render
 from . import values
 from .models import Project
 
+
+
 def index(request):
-    return resume(request)
+    return projects(request)
 
 def resume(request):
     context = {
         'resume_pdf_url': values.RESUME_PDF_URL,
+        'person': values.get_person()
     }
-    context.update(values.BASIC_INFO)
     return render(request, 'personalPages/resume.html', context)
 
 def about(request):
     context = {
-        'admin_email': values.ADMINISTRATOR_EMAIL,
+        'person': values.get_person()
     }
-    context.update(values.BASIC_INFO)
     return render(request, 'personalPages/about.html', context)
 
 def projects(request):
     context = {
-        'projects': Project.objects.all()
+        'projects': Project.objects.all(),
+        'person': values.get_person()
     }
-    context.update(values.BASIC_INFO)
     return render(request, 'personalPages/projects/projects.html', context)
