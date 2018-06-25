@@ -12,10 +12,6 @@
         padding-right: 1rem;
         min-height: initial;
     }
-
-    #header ul li {
-        font-size: 16pt;
-    }
     
     #name {
         margin-top: 0;
@@ -32,27 +28,27 @@
     
     #page-content {
         margin-top: 0;
+        min-height: initial;
+        margin-bottom: 0;
     }
 
-    #footer ul li {
-        margin-left: 2rem;
+    #footer ul {
+        li {
+            margin-left: 2rem;
+        }
+        li:first-of-type {
+            margin-left: 0;
+        }
     }
 
     .footer-text {
         display: none;
     }
 
-
-    #footer ul li:first-of-type {
-        margin-left: 0;
-    }
-
-    #page-content {
-        min-height: initial;
-        margin-bottom: 0;
-    }
-
     #header {
         padding: 1rem 1rem 1rem;
+        ul li {
+            font-size: 16pt;
+        }
     }
 }
