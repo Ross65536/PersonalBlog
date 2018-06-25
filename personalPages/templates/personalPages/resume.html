@@ -17,6 +17,9 @@
     {% endif %}
     <div id="resume_pdf_link">
         <a  href="{{resume_pdf_url}}"><i class="fas fa-file-pdf fa-lg"></i> Download Resume (PDF)</a> 
+    </div> 
+    <!-- <embed src="{{resume_pdf_url}}" type='application/pdf' id="resume_pdf"> -->
+    <div id="pdf_container">
+        <embed src="https://drive.google.com/viewerng/viewer?embedded=true&url={{ resume_pdf_url }}" id="resume_pdf">
     </div>
-    <img id="resume_image" src="{{resume_image_url}}"/>
 {% endblock %}
