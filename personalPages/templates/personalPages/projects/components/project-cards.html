@@ -7,13 +7,10 @@
         </div>
         <ul class="list-group list-group-flush">
             {% if project.technologies.all.count > 0 %}
-            <li class="list-group-item text-white bg-dark">
-                {% for technology in project.technologies.all %} {{ technology.type_name }} {% endfor %}
-            </li>
-            {% endif %} {% if project.languages.all.count > 0 %}
-            <li class="list-group-item text-white bg-dark">
-                {% for language in project.languages.all %} {{ language.type_name }} {% endfor %}
-            </li>
+                {% include 'personalPages/projects/components/type-list.html' with typename="Technologies: " names=project.technologies.all %}
+            {% endif %} 
+            {% if project.languages.all.count > 0 %}
+                {% include 'personalPages/projects/components/type-list.html' with typename="Languages: " names=project.languages.all %}
             {% endif %}
         </ul>
         {% if project.links.all.count > 0 %}
