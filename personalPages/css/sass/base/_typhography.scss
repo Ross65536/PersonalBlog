@@ -1,0 +1,89 @@
+/**
+* Colors Based on Tomorrow Night Colors
+* https://github.com/chriskempson/tomorrow-theme 
+*/
+
+$anchor-color: #de935f;
+$page-background-color: #282a2e;
+$background-color: #1d1f21;
+$header-footer-background-color: #373b41;
+$visited-anchor: #d4712b;
+
+/*
+* =VARIOUS
+*
+*/
+
+a {
+    color: $anchor-color;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*
+* =HEADER
+*
+*/
+
+#name {
+    font-size: 48pt;
+
+    a {
+        text-decoration: none;
+    }
+
+    a:active {
+        text-shadow: 0px 0px 30px $anchor-color;
+        transition: text-shadow 0.1s;
+    }
+}
+
+
+#header {
+    background-color: $header-footer-background-color;
+    font-family: Consolas, monospace;
+}
+
+#profession {
+    font-size: 18pt;
+}
+
+#top-bar a {
+    font-size: 22pt;
+}
+
+/*
+* =FOOTER
+*
+*/
+
+#footer {
+    background-color:$header-footer-background-color;
+    font-family: sans-serif;
+    font-size: 12pt;
+}
+
+/* 
+* =CONTENT
+*
+*
+*/
+
+html {
+    background-color: $background-color;
+}
+
+body {
+    background-color: $page-background-color;
+    color: #c5c8c6;
+    font-size: 14pt;
+}
+
+/* visited anchor */
+
+#page-content a:visited {
+    color: $visited-anchor;
+}
