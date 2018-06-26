@@ -8,6 +8,7 @@
 
 {% block static_files %} 
 <link rel="stylesheet" type="text/css" href="{% static 'personalPages/css/resume.css' %}" />
+<script src="{% static 'personalPages/js/resume.js' %}" defer></script>
 {% endblock %}
 
 {% block body %} 
@@ -16,8 +17,11 @@
     <div id="resume_pdf_link">
         <a  href="{{person.resume_pdf.url}}"><i class="fas fa-file-pdf fa-lg"></i> Download Resume (PDF)</a> 
     </div>
-    <div id="pdf_container">
-        <embed src="{{person.resume_pdf.url}}" type='application/pdf' id="resume_pdf">
-        <!-- <embed src="https://drive.google.com/viewerng/viewer?embedded=true&url={{ absolute_pdf_url }}" id="resume_pdf"> -->
+    <!-- embedded pdfs -->
+    <div class="pdf_container" id="pdf-native-rendered">
+        <embed src="{{person.resume_pdf.url}}" type='application/pdf' class="resume_pdf">
+    </div>
+    <div class="pdf_container" id="pdf-google-workaround">
+        <embed src="https://drive.google.com/viewerng/viewer?embedded=true&url={{ absolute_pdf_url }}" class="resume_pdf">
     </div>
 {% endblock %}
