@@ -1,7 +1,6 @@
 {% extends "personalPages/base.html" %}
 
 {% load static %}
-{% load compress %}
 
 {% block title %} 
 {{ person.fullname }}'s Projects
@@ -9,9 +8,7 @@
 
 {% block static_files %} 
 <link rel="stylesheet" type="text/css" href="{% static 'personalPages/css/projects.css' %}" />
-{% compress js %}
 <script src="{% static 'personalPages/js/projects.js' %}" defer></script>
-{% endcompress %}
 {% endblock %}
 
 {% block body %} 

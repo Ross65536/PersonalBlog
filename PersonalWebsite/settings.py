@@ -25,7 +25,7 @@ if 'DEBUG' in os.environ:
 else:
     DEBUG = False
 
-# DEBUG_PROPAGATE_EXCEPTIONS = True
+DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = ['*']
 
