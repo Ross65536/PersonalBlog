@@ -6,5 +6,10 @@
 }
 
 .card-columns {
-    margin-top: 3rem;
+    margin-top: 3rem; 
+    
+    column-count: 2;
+    @media (max-width: 35rem) {
+        column-count: 1;
+    }
 }

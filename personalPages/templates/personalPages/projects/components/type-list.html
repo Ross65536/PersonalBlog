@@ -1,6 +1,4 @@
 <li class="list-group-item text-white bg-dark">
         <b>{{ typename }}</b>
-        {% for name in names %} 
-            <button type="button" class="btn btn-light">{{ name }}</button> 
-        {% endfor %}
+        {% include 'personalPages/projects/components/button-list.html' %}
     </li>

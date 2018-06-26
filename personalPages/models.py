@@ -12,13 +12,16 @@ class Technology(TypeName):
 class Language(TypeName):
     pass
 
+class ProjectType(TypeName):
+    pass
 
 class Link(models.Model):
     name = models.CharField(max_length=256)
     link = models.URLField()
+    description = models.CharField(max_length=256, blank=True)
 
     def __str__(self):
-        return self.name + " (" + self.link + ")"
+        return self.name + " (" + self.description + ") [ " + self.link + " ]"
 
 
 class Project(models.Model):
@@ -26,6 +29,7 @@ class Project(models.Model):
     description = models.TextField(blank=True)
     technologies = models.ManyToManyField(Technology, blank=True)
     languages = models.ManyToManyField(Language, blank=True)
+    types = models.ManyToManyField(ProjectType, blank=True)
     links = models.ManyToManyField(Link, blank=True)
 
     def __str__(self):
@@ -44,7 +48,7 @@ class Email(models.Model):
         return self.name + " (" + self.link + ")"
 
 class Person(models.Model):
-    username = models.CharField(max_length=256)
+    username = models.CharField(max_length=256, unique=True)
     fullname = models.CharField(max_length=256)
     profession = models.CharField(max_length=256)
     email = models.ForeignKey(Email, on_delete=models.SET_NULL, null=True)

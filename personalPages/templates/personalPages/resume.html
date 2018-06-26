@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %} 
-{{ fullname }}'s Resume
+{{ person.fullname }}'s Resume
 {% endblock %}
 
 {% block static_files %} 
@@ -12,7 +12,7 @@
 
 {% block body %} 
     {{ person.resume_page | safe }}
-    
+
     <div id="resume_pdf_link">
         <a  href="{{resume_pdf_url}}"><i class="fas fa-file-pdf fa-lg"></i> Download Resume (PDF)</a> 
     </div>
