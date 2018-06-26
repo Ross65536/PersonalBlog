@@ -8,6 +8,7 @@ services:
     volumes:
       - .:/code
       - ./nginx:/etc/nginx/conf.d
+      - ./uploads:/code/uploads
     depends_on:
       - web
   web:
@@ -16,5 +17,6 @@ services:
       - /code/start_server.sh
     volumes:
       - .:/code
+      - ./uploads:/code/uploads
     expose:
       - "8000"
