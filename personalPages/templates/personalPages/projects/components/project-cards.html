@@ -1,12 +1,12 @@
 <div class="card-columns">
     {% for project in projects %}
-    <div class="card text-white bg-dark">
+    <div class="card bg-dark">
         <div class="card-body">
-            <h2 class="card-title">{{ project.title | safe | truncatewords_html:10 }}
+            <h1 class="card-title">{{ project.title | safe | truncatewords_html:10 }}
                 {% if project.types.all.count > 0 %}
                     {% include 'personalPages/projects/components/button-list.html' with typename="Types: " names=project.types.all %}
                 {% endif %}
-            </h2>
+            </h1>
             <p class="card-text">{{ project.description | safe | truncatewords_html:50 }}</p>
         </div>
         <ul class="list-group list-group-flush">
