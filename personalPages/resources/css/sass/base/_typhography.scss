@@ -24,6 +24,10 @@ a:hover {
     text-decoration: underline;
 }
 
+button.active {
+    background-color: $anchor-color; 
+}
+
 /*
 * =HEADER
 *

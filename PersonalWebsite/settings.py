@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     "compressor",
 ]
 
-COMPRESS_ENABLED = True
+COMPRESS_ENABLED = not DEBUG
 
 COMPRESS_CSS_FILTERS = [
     'compressor.filters.cssmin.CSSMinFilter'
