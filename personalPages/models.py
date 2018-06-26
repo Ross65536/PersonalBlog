@@ -53,6 +53,7 @@ class Person(models.Model):
     profession = models.CharField(max_length=256)
     email = models.ForeignKey(Email, on_delete=models.SET_NULL, null=True)
     footer_links = models.ManyToManyField(PersonLink, blank=True)
+    resume_pdf = models.FileField(upload_to='resume', null=True)
 
     project_page = models.TextField(blank=True)
     resume_page = models.TextField(blank=True)

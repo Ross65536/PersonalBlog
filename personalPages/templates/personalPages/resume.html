@@ -14,9 +14,10 @@
     {{ person.resume_page | safe }}
 
     <div id="resume_pdf_link">
-        <a  href="{{resume_pdf_url}}"><i class="fas fa-file-pdf fa-lg"></i> Download Resume (PDF)</a> 
+        <a  href="{{person.resume_pdf.url}}"><i class="fas fa-file-pdf fa-lg"></i> Download Resume (PDF)</a> 
     </div>
     <div id="pdf_container">
-        <embed src="https://drive.google.com/viewerng/viewer?embedded=true&url={{ resume_pdf_url }}" id="resume_pdf">
+        <embed src="{{person.resume_pdf.url}}" type='application/pdf' id="resume_pdf">
+        <!-- <embed src="https://drive.google.com/viewerng/viewer?embedded=true&url={{ absolute_pdf_url }}" id="resume_pdf"> -->
     </div>
 {% endblock %}

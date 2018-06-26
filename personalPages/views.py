@@ -11,9 +11,11 @@ def index(request):
     return projects(request)
 
 def resume(request):
+    person = values.get_person()
     context = {
         'resume_pdf_url': values.RESUME_PDF_URL,
-        'person': values.get_person()
+        'person': person,
+        'absolute_pdf_url': request.build_absolute_uri(person.resume_pdf.url)
     }
     return render(request, 'personalPages/resume.html', context)
 
