@@ -10,5 +10,4 @@ RUN apt-get install sqlite3 libsqlite3-dev -y
 
 RUN pip install -r requirements.txt
 ADD . /code/
-RUN rm /code/.env &
-RUN rm /code/env.sh &
+RUN rm /code/*.env &
