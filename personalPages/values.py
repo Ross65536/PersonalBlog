@@ -1,5 +1,7 @@
 from .models import Person
 
+username = "ros"
+
 def get_person():
     return Person.objects.first()
 

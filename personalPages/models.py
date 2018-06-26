@@ -18,10 +18,8 @@ class Link(models.Model):
     link = models.URLField()
 
     def __str__(self):
-        return self.name
+        return self.name + " (" + self.link + ")"
 
-    def get_fontawesome(self):
-        return "<i class=\"fas fa-envelope\"></i>"
 
 class Project(models.Model):
     title = models.CharField(max_length=256)
@@ -38,10 +36,15 @@ class Project(models.Model):
 class PersonLink(Link):
     pass
 
-class Email(Link):
-    pass
+class Email(models.Model):
+    name = models.CharField(max_length=256)
+    link = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.name + " (" + self.link + ")"
 
 class Person(models.Model):
+    username = models.CharField(max_length=256)
     fullname = models.CharField(max_length=256)
     profession = models.CharField(max_length=256)
     email = models.ForeignKey(Email, on_delete=models.SET_NULL, null=True)
@@ -50,3 +53,6 @@ class Person(models.Model):
     project_page = models.TextField(blank=True)
     resume_page = models.TextField(blank=True)
     about_page = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.username + " (" + self.fullname + ")"
