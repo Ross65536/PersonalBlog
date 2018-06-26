@@ -1,7 +1,7 @@
 import sass 
 import os
 
-SASS_DIR='resources/css/sass'
+SASS_DIR='sass'
 CSS_OUTPUT_DIR='static/personalPages/css/'
 
 # sass

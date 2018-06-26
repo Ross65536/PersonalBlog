@@ -10,3 +10,4 @@ db.*
 .vscode
 *.env
 uploads
+env.sh

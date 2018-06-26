@@ -25,6 +25,8 @@ if 'DEBUG' in os.environ:
 else:
     DEBUG = False
 
+# DEBUG_PROPAGATE_EXCEPTIONS = True
+
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -41,8 +43,6 @@ INSTALLED_APPS = [
     "compressor",
 ]
 
-COMPRESS_ENABLED = not DEBUG
-
 COMPRESS_CSS_FILTERS = [
     'compressor.filters.cssmin.CSSMinFilter'
 ]
@@ -50,13 +50,7 @@ COMPRESS_JS_FILTERS = [
     'compressor.filters.jsmin.JSMinFilter'
 ]
 
-STATICFILES_FINDERS = ( 
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
-)
 
-COMPRESS_ROOT =  os.path.join(BASE_DIR, 'personalPages/resources')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -132,10 +126,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+COMPRESS_ENABLED = not DEBUG
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+STATICFILES_FINDERS = ( 
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+
+COMPRESS_ROOT = STATIC_ROOT
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = '/files/'

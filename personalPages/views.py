@@ -30,3 +30,6 @@ def projects(request):
         'person': utils.get_person()
     }
     return render(request, 'personalPages/projects/projects.html', context)
+
+def custom_404(request):
+    return render(request, '404.html', {}, status=404)

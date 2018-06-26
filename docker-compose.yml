@@ -1,8 +1,6 @@
 version: '3'
 
 services:
-  db:
-    image: postgres
   web:
     build: .
     command: 
@@ -10,6 +8,5 @@ services:
     volumes:
       - .:/code
     ports:
-      - "80:8000"
-    depends_on:
-      - db
+      # - "80:8000"
+      - "8000:8000"
