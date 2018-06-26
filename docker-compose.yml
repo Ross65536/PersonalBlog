@@ -6,7 +6,6 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - .:/code
       - ./nginx:/etc/nginx/conf.d
       - ./uploads:/code/uploads
     depends_on:
@@ -16,7 +15,6 @@ services:
     command: 
       - /code/start_server.sh
     volumes:
-      - .:/code
       - ./uploads:/code/uploads
     expose:
       - "8000"
