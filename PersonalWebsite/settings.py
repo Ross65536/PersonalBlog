@@ -38,7 +38,25 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    "compressor",
 ]
+
+COMPRESS_ENABLED = True
+
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.cssmin.CSSMinFilter'
+]
+COMPRESS_JS_FILTERS = [
+    'compressor.filters.jsmin.JSMinFilter'
+]
+
+STATICFILES_FINDERS = ( 
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+
+COMPRESS_ROOT =  os.path.join(BASE_DIR, 'personalPages/resources')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
