@@ -55,7 +55,9 @@ li {
     @extend %flex-center;
     padding: 0.5rem 1rem;
     ul {
-        @extend %flex-center;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
         margin: 0;
         padding-left: 0;
         li {
