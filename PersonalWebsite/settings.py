@@ -25,7 +25,7 @@ if 'DEBUG' in os.environ:
 else:
     DEBUG = False
 
-DEBUG_PROPAGATE_EXCEPTIONS = True
+# DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -126,7 +126,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-COMPRESS_ENABLED = not DEBUG
+# COMPRESS_ENABLED = not DEBUG
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
