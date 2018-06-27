@@ -7,7 +7,6 @@ services:
     image: nginx:latest
     ports:
       - "80:8000"
-      - "8000:8000"
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - ./uploads:/code/uploads
@@ -19,8 +18,6 @@ services:
       - /code/start_server.sh
     volumes:
       - ./uploads:/code/uploads
-    expose:
-      - "8000"
     environment:
       - SECRET_KEY
       - P_USERNAME

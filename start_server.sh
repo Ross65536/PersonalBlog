@@ -8,9 +8,11 @@ python3 manage.py makemigrations && python3 manage.py makemigrations personalPag
 if [ -n "$ADMIN_PASS" ];
 	then
     # Setup admin account in database    
-    echo "from django.contrib.auth.models import User; User.objects.filter(email='$ADMIN_EMAIL').delete(); User.objects.create_superuser('admin', '$ADMIN_EMAIL', '$ADMIN_PASS')" | python3 manage.py shell
+    echo -e "from django.contrib.auth.models import User\n\nif(not User.objects.filter(username='admin').all()):\n\tUser.objects.create_superuser('admin', '$ADMIN_EMAIL', '$ADMIN_PASS')\nelse:\n\tprint('admin account already exists, no account created')" | python3 manage.py shell && \
+    echo -e "${ACCENT}Web app admin account possibly created ${NV}with username 'admin', login at <hostname>/admin"
 
-    echo -e "${ACCENT}Web app admin account created ${NV}with username 'admin', login at <hostname>/admin"
+    unset ADMIN_EMAIL
+    unset ADMIN_PASS
 fi
 
 # Start Gunicorn processes
