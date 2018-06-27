@@ -9,5 +9,3 @@ RUN apt-get install sqlite3 libsqlite3-dev -y
 
 RUN pip install -r requirements.txt
 COPY . /code/
-
-RUN ls -a -1X
