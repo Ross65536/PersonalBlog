@@ -3,3 +3,7 @@
 .vscode
 Dockerfile
 docker-compose.yml
+*.db
+nginx
+README.md
+deploy.sh

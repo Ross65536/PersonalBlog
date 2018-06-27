@@ -1,0 +1,1 @@
+docker push $DOCKER_TAG_NAME

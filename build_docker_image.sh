@@ -1,0 +1,1 @@
+docker build . --build-arg SECRET_KEY=$SECRET_KEY -t $DOCKER_TAG_NAME $@

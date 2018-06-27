@@ -1,9 +1,12 @@
 version: '3'
 
 services:
+  db:
+    image: postgres:latest
   nginx:
     image: nginx:latest
     ports:
+      - "80:8000"
       - "8000:8000"
     volumes:
       - ./nginx:/etc/nginx/conf.d
@@ -11,13 +14,18 @@ services:
     depends_on:
       - web
   web:
-    build: .
+    image: "${DOCKER_TAG_NAME}"
     command: 
       - /code/start_server.sh
     volumes:
       - ./uploads:/code/uploads
     expose:
       - "8000"
-    env_file:
-      - runtime.env
-      - admin.env
+    environment:
+      - SECRET_KEY
+      - P_USERNAME
+      - DATABASE_URL
+      - ADMIN_EMAIL
+      - ADMIN_PASS
+    depends_on:
+      - db
