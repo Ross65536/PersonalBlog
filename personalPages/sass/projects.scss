@@ -1,6 +1,9 @@
 
+@import 'base/tomorrow_night_colors';
+
 #page-content .card {
     margin-bottom: 1rem;
+    background-color: $card-background-color;
 
     .card-title {
         margin-bottom: 1.5rem;
@@ -10,8 +13,18 @@
     button {
         // background-color: #5d7bdf;
         border-width: 0;
+        margin-bottom: 0.4rem
     }
 
+    .card-tags {
+        background-color: $card-background-color;
+        display: flex;
+        flex-direction: row;
+
+        div:first-child {
+            margin-right: 0.5rem;
+        }
+    }
 }
 
 .card-columns {

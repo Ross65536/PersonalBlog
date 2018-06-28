@@ -1,20 +1,20 @@
 <div class="card-columns">
     {% for project in projects %}
-    <div class="card bg-dark">
+    <div class="card">
         <div class="card-body">
-            <h2 class="card-title">{{ project.title | safe | truncatewords_html:10 }}
+            <h2 class="card-title">{{ project.title | safe }}
                 {% if project.types.all.count > 0 %}
                     {% include 'personalPages/projects/components/button-list.html' with typename="Types: " names=project.types.all %}
                 {% endif %}
             </h2>
-            <p class="card-text">{{ project.description | safe | truncatewords_html:50 }}</p>
+            <p class="card-text">{{ project.description | safe }}</p>
         </div>
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush" >
             {% if project.technologies.all.count > 0 %}
-                {% include 'personalPages/projects/components/type-list.html' with typename="Technologies: " names=project.technologies.all %}
+                {% include 'personalPages/projects/components/type-list.html' with typename="Tech: " names=project.technologies.all %}
             {% endif %} 
             {% if project.languages.all.count > 0 %}
-                {% include 'personalPages/projects/components/type-list.html' with typename="Languages: " names=project.languages.all %}
+                {% include 'personalPages/projects/components/type-list.html' with typename="Lang: " names=project.languages.all %}
             {% endif %}
         </ul>
         {% if project.links.all.count > 0 %}
