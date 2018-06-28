@@ -25,5 +25,6 @@ services:
       - ADMIN_EMAIL
       - ADMIN_PASS
       - ALLOWED_HOSTS_LIST
+      - WEBSITE_HOSTNAME
     depends_on:
       - db

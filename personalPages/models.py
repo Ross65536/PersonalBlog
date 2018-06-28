@@ -69,7 +69,7 @@ from django.db.models.signals import post_init, post_save, post_delete
 from django.dispatch import receiver
 
 @receiver(post_init, sender= Person)
-def backup_image_path(sender, instance, **kwargs):
+def backup_resume_path(sender, instance, **kwargs):
     instance._current_resume_pdf_file = instance.resume_pdf
 
 def _delete_file(instance):
