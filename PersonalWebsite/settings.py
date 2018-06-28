@@ -16,17 +16,16 @@ import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Quick-start development settings - unsuitable for production
 SECRET_KEY = os.environ['SECRET_KEY']
 
-# SECURITY WARNING: don't run with debug turned on in production!
-if 'DEBUG' in os.environ:
+# SECURITY WARNING: don't run with debug turned on in production 
+_DEBUG_VALUES = ["y", "yes", "true", "True"]
+if 'DEBUG' in os.environ and any(val in os.environ['DEBUG'] for val in _DEBUG_VALUES):
     DEBUG = True
 else:
     DEBUG = False
 
-
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS_LIST'].split(",")
 
 # Application definition
 
@@ -121,7 +120,6 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 STATICFILES_FINDERS = ( 
