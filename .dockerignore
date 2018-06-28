@@ -7,3 +7,5 @@ docker-compose.yml
 nginx
 README.md
 deploy.sh
+staticfiles
+uploads
