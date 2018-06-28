@@ -61,3 +61,28 @@ class Person(models.Model):
 
     def __str__(self):
         return self.username + " (" + self.fullname + ")"
+
+
+# delete file after update 
+# modified from https://stackoverflow.com/a/38265603
+from django.db.models.signals import post_init, post_save, post_delete
+from django.dispatch import receiver
+
+@receiver(post_init, sender= Person)
+def backup_image_path(sender, instance, **kwargs):
+    instance._current_resume_pdf_file = instance.resume_pdf
+
+def _delete_file(instance):
+    if hasattr(instance, '_current_resume_pdf_file'):
+        if instance._current_resume_pdf_file != instance.resume_pdf.path:
+            instance._current_resume_pdf_file.delete(save=False)
+
+@receiver(post_save, sender = Person)
+def delete_old_file_on_save(sender, instance, **kwargs):
+    _delete_file(instance)
+
+@receiver(post_delete, sender = Person)
+def delete_old_file_on_delete(sender, instance, **kwargs):
+    _delete_file(instance)
+
+        
