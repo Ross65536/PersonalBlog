@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from . import utils
 from .models import Project
-
+import os
 
 
 def index(request):
@@ -14,7 +14,7 @@ def resume(request):
     person = utils.get_person()
     context = {
         'person': person,
-        'absolute_pdf_url': request.build_absolute_uri(person.resume_pdf.url)
+        'absolute_pdf_url': os.environ['WEBSITE_HOSTNAME'] + person.resume_pdf.url
     }
     return render(request, 'personalPages/resume.html', context)
 
