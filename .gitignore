@@ -3,11 +3,11 @@
 */__pycache__/*
 venv
 staticfiles
-.env
+
 db.*
 *.db
 .vscode
 *.env
+!local.env
 uploads
-!default.env
 db
