@@ -19,7 +19,7 @@ services:
       context: ./
       args:
         - SECRET_KEY
-        - ALLOWED_HOSTS_LIST="*"
+        - ALLOWED_HOSTS_LIST=*
     command: 
       - /code/start_server.sh
     volumes:
@@ -28,7 +28,7 @@ services:
       - SECRET_KEY
       - ADMIN_EMAIL
       - ADMIN_PASS
-      - ALLOWED_HOSTS_LIST
+      - ALLOWED_HOSTS_LIST=*
       - P_USERNAME=stub
       - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
       - WEBSITE_HOSTNAME="http://0.0.0.0:8000"
