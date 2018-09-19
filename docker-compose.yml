@@ -3,6 +3,8 @@ version: '3'
 services:
   db:
     image: postgres:latest
+    volumes:
+      - ./db:/var/lib/postgresql/data
   nginx:
     image: nginx:latest
     ports:
@@ -13,18 +15,22 @@ services:
     depends_on:
       - web
   web:
-    image: "${DOCKER_TAG_NAME}"
+    build: 
+      context: ./
+      args:
+        - SECRET_KEY
+        - ALLOWED_HOSTS_LIST="*"
     command: 
       - /code/start_server.sh
     volumes:
       - ./uploads:/code/uploads
     environment:
       - SECRET_KEY
-      - P_USERNAME
-      - DATABASE_URL
       - ADMIN_EMAIL
       - ADMIN_PASS
       - ALLOWED_HOSTS_LIST
-      - WEBSITE_HOSTNAME
+      - P_USERNAME=stub
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/postgres
+      - WEBSITE_HOSTNAME="http://0.0.0.0:8000"
     depends_on:
       - db
