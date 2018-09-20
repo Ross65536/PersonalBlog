@@ -60,6 +60,7 @@ docker cp backup/dump<date>.json <id>:/code/dump.json # copy backup to container
 docker-compose exec web python manage.py loaddata dump.json
 
 ```
+
 ## Environment Variables
 
 - DEBUG (optional): set this to "y" if you want debug information, leave unset or different from "y" to disable debugging.
@@ -82,3 +83,11 @@ You can login to you admin account and populate the website with data by creatin
 The blog feature is not implemented yet.
 
 The style follows the [Tomorrow Night](https://github.com/chriskempson/tomorrow-theme) color scheme
+
+
+## Misc Shell Commands
+- Checks unique IP visits:
+```bash
+# in VPS, source root
+cat logs/access.log | grep -Eo '^[^ ]+' | uniq | sort
+```
