@@ -26,6 +26,19 @@ $ ./start_server.sh # to init your database and start your django app
 ```bash
 $ docker-compose up
 ```
+
+### Docker Backup databse
+
+1. Back up:
+```bash
+pg_dumpall -U postgres -c > backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+
+# or
+
+ssh root@<hostname> cd <source location> && docker-compose exec db pg_dumpall -U postgres -c > backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+```
+2. Restore:
+3. 
 ## Environment Variables
 
 - DEBUG (optional): set this to "y" if you want debug information, leave unset or different from "y" to disable debugging.
