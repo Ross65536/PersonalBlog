@@ -10,12 +10,12 @@ A Website that I have built for myself to display my resume and projects on the 
 2. Run pip install -r requirements.txt
 3. Load the default.env file, or create your own .env file with your environment variables (check next section):
 ```bash
-$ source dotenv.sh local.env #this will load the environment variables in default.env
+source dotenv.sh local.env #this will load the environment variables in default.env
 ```
 4. Execute the following:
 ```bash
-$ ./build.sh # to collect static files, build sass
-$ ./start_server.sh # to init your database and start your django app
+./build.sh # to collect static files, build sass
+./start_server.sh # to init your database and start your django app
 ```
 5. Visit http://0.0.0.0:8000
 
@@ -24,7 +24,8 @@ $ ./start_server.sh # to init your database and start your django app
 1. Load your secret environment variables (check docker-compose.yml for missing envs)
 2. Execute
 ```bash
-$ docker-compose up
+docker-compose build
+docker-compose up
 ```
 
 ### DB backup and restore
@@ -47,12 +48,16 @@ ssh root@<hostname> cat dump.json > backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.json
 ```bash
 python manage.py loaddata dump.json
 
+# remove previous db (in project root)
+rm -rf db
+
 # copy backup to VPS
 scp backup/dump<date>.json root@<hostname>:dump.json
 # inside docker
+cd <project root>
 docker ps # find out web image ID
-docker cp backup/dump<date>.json <id>:code/dump.json
-docker exec -i <id> python manage.py loaddata dump.json
+docker cp backup/dump<date>.json <id>:/code/dump.json # copy backup to container
+docker-compose exec web python manage.py loaddata dump.json
 
 ```
 ## Environment Variables
