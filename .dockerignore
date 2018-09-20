@@ -13,3 +13,4 @@ staticfiles
 uploads
 db
 logs
+certs
