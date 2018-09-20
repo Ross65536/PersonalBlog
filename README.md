@@ -27,18 +27,34 @@ $ ./start_server.sh # to init your database and start your django app
 $ docker-compose up
 ```
 
-### Docker Backup databse
+### DB backup and restore
+
+Check out [article](http://deephacks.com/articles/entry/django-backups-dumpdata-versus-sql-dump-postgresql-and-mysql/) 
 
 1. Back up:
 ```bash
-pg_dumpall -U postgres -c > backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+python manage.py dumpdata > backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.json
 
-# or
+# or for docker
+ssh root@<hostname>
+cd /code
+docker-compose exec web python manage.py dumpdata > dump.json
+exit
 
-ssh root@<hostname> cd <source location> && docker-compose exec db pg_dumpall -U postgres -c > backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+ssh root@<hostname> cat dump.json > backup/dump_`date +%d-%m-%Y"_"%H_%M_%S`.json
 ```
 2. Restore:
-3. 
+```bash
+python manage.py loaddata dump.json
+
+# copy backup to VPS
+scp backup/dump<date>.json root@<hostname>:dump.json
+# inside docker
+docker ps # find out web image ID
+docker cp backup/dump<date>.json <id>:code/dump.json
+docker exec -i <id> python manage.py loaddata dump.json
+
+```
 ## Environment Variables
 
 - DEBUG (optional): set this to "y" if you want debug information, leave unset or different from "y" to disable debugging.
