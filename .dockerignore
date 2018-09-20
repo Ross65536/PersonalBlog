@@ -12,3 +12,5 @@ upload_config.sh
 staticfiles
 uploads
 db
+logs
+certs

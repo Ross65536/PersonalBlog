@@ -12,3 +12,5 @@ db.*
 !local.env
 uploads
 db
+logs
+certs
