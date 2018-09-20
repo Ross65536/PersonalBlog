@@ -12,6 +12,7 @@ services:
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - ./uploads:/code/uploads
+      - ./logs:/logs
     depends_on:
       - web
   web:
