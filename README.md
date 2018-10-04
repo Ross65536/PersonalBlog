@@ -1,6 +1,7 @@
 # Personal Website 
 
 A Website that I have built for myself to display my resume and projects on the web. 
+Runs on docket
 
 ## Installation
 
@@ -91,3 +92,7 @@ The style follows the [Tomorrow Night](https://github.com/chriskempson/tomorrow-
 # in VPS, source root
 cat logs/access.log | grep -Eo '^[^ ]+' | uniq | sort
 ```
+
+## Thanks
+
+Big thanks to @Toliveira97 for supporting me all the way
