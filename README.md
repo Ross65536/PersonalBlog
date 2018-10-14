@@ -7,7 +7,7 @@ A Website that I have built for myself to display my resume and projects on the 
 ### To run locally:
 
 1. Install python v3.5 or higher and pip
-2. Run pip install -r requirements.txt
+2. Run `pip install -r requirements.txt`
 3. Load the default.env file, or create your own .env file with your environment variables (check next section):
 ```bash
 source dotenv.sh local.env #this will load the environment variables in default.env
